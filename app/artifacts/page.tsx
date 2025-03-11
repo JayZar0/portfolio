@@ -3,6 +3,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {Divider} from "@mui/material";
 
 
 export default function ArtifactsPage() {
@@ -22,6 +23,7 @@ export default function ArtifactsPage() {
           malesuada lacus ex, sit amet blandit leo lobortis eget.
         </AccordionDetails>
       </Accordion>
+
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -31,17 +33,22 @@ export default function ArtifactsPage() {
           <Typography component="span">Scheduling Application</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography variant='h6'>
-            Tech Stack:
-            Front-End: Vue
-            Backend: Node, TypeORM, Express
-            Database: SQLite3
+          <Typography variant='subtitle1' component='p'>
+            Tech Stack:<br />
+            Front-End: Vue<br />
+            Backend: Node, Express<br />
+            ORM: TypeORM<br />
+            Database: SQLite3<br />
           </Typography>
-          <Typography variant='body1'>
-
+          <Divider />
+          <Typography variant='body1' component='p'>
+            Description: A barebones employee scheduling app that has many tables in a
+            database that can be used to store employees, shifts, and departments. There
+            will be authentication for employees who have credentials stored in the database.
           </Typography>
         </AccordionDetails>
       </Accordion>
+
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -51,8 +58,23 @@ export default function ArtifactsPage() {
           <Typography component="span">Flyer Scanner</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          <Typography variant='subtitle1' component='p'>
+            Tech Stack:<br />
+            Front-End: Next.js<br />
+            Backend: Node, RabbitMQ<br />
+            AI: OpenAI, Gemini<br />
+            ORM: Prisma<br />
+            Database: Postgres
+          </Typography>
+          <Divider />
+          <Typography variant='body1' component='p'>
+            Description: This application will take a flyer that a user inputs and then use gemini
+            to scan the raw text in the flyer. Afterwards, the raw text will be sent to
+            OpenAI where it will be mapped to an object that will check if the product is
+            in the clients Airtable and if it is it will place it into our database. From
+            there the client can update his inventory with the products that were placed
+            into our database.
+          </Typography>
         </AccordionDetails>
       </Accordion>
     </>

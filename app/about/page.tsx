@@ -20,7 +20,7 @@ export default function AboutMePage() {
         <Grid container spacing={4}>
           <Grid size={4}>
             <Item className='m-1'>
-              <Avatar />
+              <Avatar src='drake.gif' sx={{ width: 100, height: 100 }} />
               <Typography variant='h6'>John Lazaro</Typography>
               <Typography variant='body1'><ContactMail /> Email: john.e.lazaro@gmail.com</Typography>
               <Typography variant='body1'><Phone /> Phone Number: (306)850-8737</Typography>
