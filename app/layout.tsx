@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
-        <footer className="content-center items-center text-center"><Copyright /> John Lazaro 2025</footer>
+        <footer className="content-center items-center text-center">Developed with Next.js <Copyright /> John Lazaro 2025</footer>
       </body>
     </html>
   );

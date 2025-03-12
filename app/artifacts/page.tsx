@@ -3,12 +3,12 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {Divider} from "@mui/material";
+import {Container, Divider} from "@mui/material";
 
 
 export default function ArtifactsPage() {
   return (
-    <>
+    <Container className='m-2'>
       <Typography variant='h4'>Projects</Typography>
       <Accordion>
         <AccordionSummary
@@ -39,7 +39,7 @@ export default function ArtifactsPage() {
             Backend: Node, Express<br />
             ORM: TypeORM<br />
             Database: SQLite3<br />
-          </Typography>
+          </Typography>z
           <Divider />
           <Typography variant='body1' component='p'>
             Description: A barebones employee scheduling app that has many tables in a
@@ -77,6 +77,6 @@ export default function ArtifactsPage() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-    </>
+    </Container>
   )
 }

@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import MuseumIcon from '@mui/icons-material/Museum';
 import {useState} from "react";
-import {Computer, Home, Phone} from "@mui/icons-material";
+import {Home} from "@mui/icons-material";
 import {redirect} from "next/navigation";
 
 
