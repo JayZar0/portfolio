@@ -19,7 +19,8 @@ export default function ArtifactsPage() {
         A barebones employee scheduling app that has many tables in a
         database that can be used to store employees, shifts, and departments. There
         will be authentication for employees who have credentials stored in the database.
-        As of right now the two main login roles are managers and employees
+        As of right now the two main login roles are managers and employees. The managers
+        have are able to assign/edit shifts, edit and create employees.
       </Artifact>
       <Artifact stack='Next.js Node RabbitMQ Prisma Postgres' title='Flyer Scanner'>
         This application will take a flyer that a user inputs and then use gemini
