@@ -1,68 +1,52 @@
-import { Avatar, Container, Typography, Paper } from "@mui/material";
-import Grid from "@mui/material/Grid2"; // ✅ Correct import
+import { Avatar, Container, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import { ContactMail, Phone } from "@mui/icons-material";
-import { styled } from "@mui/system";
 import * as React from "react";
+import { styled } from "@mui/system";
+import Paper from "@mui/material/Paper";
+import {ThemeProvider, createTheme} from "@mui/material/styles";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
-  padding: theme.spacing(2),
+  padding: theme.spacing(1),
   textAlign: "center",
-}));
+}))
 
-export default function About() {
+export default function AboutLargeScreen() {
   return (
-    <Container maxWidth="md">
-      <Grid container spacing={2} justifyContent="center">
-
-        {/* Left Section (Profile + Skills) */}
-        <Grid columns={{ xs: 12, sm: 4 }} container direction="column" spacing={2}>
-          <Grid>
-            <Item>
-              <Avatar
-                src="john.png"
-                sx={{
-                  width: 100,
-                  height: 100,
-                  margin: "auto",
-                }}
-              />
-              <Typography variant="h6">John Lazaro</Typography>
-              <Typography variant="body1">
-                <ContactMail fontSize="small" sx={{ verticalAlign: "middle", mr: 1 }} />
-                john.e.lazaro@gmail.com
-              </Typography>
-              <Typography variant="body1">
-                <Phone fontSize="small" sx={{ verticalAlign: "middle", mr: 1 }} />
-                (306) 850-8737
-              </Typography>
-            </Item>
-          </Grid>
-
-          <Grid>
-            <Item>
-              <Typography variant="h6">Skills and Experience</Typography>
-              <Typography variant="body1">...</Typography>
-            </Item>
-          </Grid>
-        </Grid>
-
-        {/* Right Section (About) */}
-        <Grid columns={{ xs: 12, sm: 8 }}>
-          <Item sx={{ textAlign: "left" }}>
-            <Typography variant="h6">About</Typography>
+    <Container>
+      <Grid container spacing={4}>
+        <Grid size={{xs: 12, sm: 12, md: 4}}>
+          <Item className="m-1">
+            <Avatar src="john.png" sx={{ width: 100, height: 100 }} />
+            <Typography variant="h6">John Lazaro</Typography>
             <Typography variant="body1">
-              I started off as a student in electronics engineering with an interest in developing
-              robotics. However, I found myself struggling with hardware development. Eventually,
-              I shifted toward software development due to its similarities with engineering and the
-              significant role programming plays in electronics. Since then, I have enjoyed my time
-              studying networking, operating systems, software development, database management, and
-              project management in the Computer Systems Technology program.
+              <ContactMail /> Email: john.e.lazaro@gmail.com
+            </Typography>
+            <Typography variant="body1">
+              <Phone /> Phone Number: (306)850-8737
+            </Typography>
+          </Item>
+          <Item className="m-1">
+            <Typography variant="h6">Skills and Experience</Typography>
+            <Typography variant="body1"></Typography>
+          </Item>
+        </Grid>
+        <Grid size={{xs: 12, sm: 12, md: 8}}>
+          <Item>
+            <Typography variant="h6">About</Typography>
+            <Typography variant="body1" component="p" textAlign="left">
+              I started off as a student in electronics engineering with the interest of developing
+              robotics. However, as time went on I found myself struggling when it came to developing hardware
+              from scratch. Throughout my time of struggle in the engineering field, I started taking an interest
+              towards software development since there are many similarities and also programming is a big portion
+              of the electronic engineering field as well. Ever since the swap I&#39;ve been enjoying my time in
+              the Computer Systems Technology program studying about networking, operating systems, software
+              development, database management and project management.
             </Typography>
           </Item>
         </Grid>
-
       </Grid>
     </Container>
-  );
+  )
 }
