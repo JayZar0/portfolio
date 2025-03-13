@@ -1,5 +1,5 @@
 import { Avatar, Container, Typography, Paper } from "@mui/material";
-import Grid from "@mui/material/Grid2"; // ✅ Correct Grid2 import
+import Grid from "@mui/material/Grid2"; // ✅ Correct import
 import { ContactMail, Phone } from "@mui/icons-material";
 import { styled } from "@mui/system";
 import * as React from "react";
@@ -8,22 +8,22 @@ const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
   padding: theme.spacing(2),
   textAlign: "center",
-}))
+}));
 
 export default function About() {
   return (
     <Container maxWidth="md">
-      <Grid container spacing={2} justifyContent="center" component="div">
+      <Grid container spacing={2} justifyContent="center">
 
-        {/* Left Section */}
-        <Grid container direction="column" spacing={2} sx={{ flex: { xs: "100%", sm: "33%" } }} component="div">
-          <Grid component="div">
+        {/* Left Section (Profile + Skills) */}
+        <Grid columns={{ xs: 12, sm: 4 }} container direction="column" spacing={2}>
+          <Grid>
             <Item>
               <Avatar
                 src="john.png"
                 sx={{
-                  width: { xs: 80, sm: 100 },
-                  height: { xs: 80, sm: 100 },
+                  width: 100,
+                  height: 100,
                   margin: "auto",
                 }}
               />
@@ -39,7 +39,7 @@ export default function About() {
             </Item>
           </Grid>
 
-          <Grid component="div">
+          <Grid>
             <Item>
               <Typography variant="h6">Skills and Experience</Typography>
               <Typography variant="body1">...</Typography>
@@ -47,8 +47,8 @@ export default function About() {
           </Grid>
         </Grid>
 
-        {/* Right Section */}
-        <Grid sx={{ flex: { xs: "100%", sm: "67%" } }} component="div">
+        {/* Right Section (About) */}
+        <Grid columns={{ xs: 12, sm: 8 }}>
           <Item sx={{ textAlign: "left" }}>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1">
@@ -64,5 +64,5 @@ export default function About() {
 
       </Grid>
     </Container>
-  )
+  );
 }
