@@ -4,7 +4,6 @@ import { ContactMail, Phone } from "@mui/icons-material";
 import * as React from "react";
 import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
-import {ThemeProvider, createTheme} from "@mui/material/styles";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
