@@ -34,7 +34,7 @@ export default function RootLayout({
         <footer className="content-center items-center text-center">
           Developed with Next.js <Copyright /> John Lazaro 2025
           <a href={process.env.NEXT_PUBLIC_GITHUB}>
-            <img alt='github logo' src='/github-mark-white.png' />
+            <img height={50} width={50} alt='github logo' src='/github-mark-white.png' />
           </a>
         </footer>
       </body>
