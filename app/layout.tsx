@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/navbar";
 import {Copyright} from "@mui/icons-material";
+import Image from "next/image";
 import React from "react";
 
 
@@ -31,7 +32,12 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         {children}
-        <footer className="content-center items-center text-center">Developed with Next.js <Copyright /> John Lazaro 2025</footer>
+        <footer className="content-center items-center text-center">
+          Developed with Next.js <Copyright /> John Lazaro 2025
+          <a href={process.env.NEXT_PUBLIC_GITHUB}>
+            <Image height={50} width={50} alt='github logo' src='/github-mark-white.png'/>
+          </a>
+        </footer>
       </body>
     </html>
   );
