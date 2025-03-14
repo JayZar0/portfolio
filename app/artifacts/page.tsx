@@ -5,8 +5,8 @@ import Artifact from "@/app/components/artifact";
 
 export default function ArtifactsPage() {
   return (
-    <Container className='m-2'>
-      <Typography variant='h4'>Projects</Typography>
+    <Container className='m-2 items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+      <Typography variant='h4' component='h4' margin={5}>Projects</Typography>
       <Artifact stack='Java SQLite' title='Mobile POS'>
         A minimal point of sales system for mobile devices that is capable of storing
         product inventory and transactions. This was made as a school project for mobile

@@ -4,6 +4,8 @@ import "./globals.css";
 import NavBar from "./components/navbar";
 import {Copyright} from "@mui/icons-material";
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 
 const geistSans = Geist({
@@ -33,9 +35,9 @@ export default function RootLayout({
         {children}
         <footer className="content-center items-center text-center">
           Developed with Next.js <Copyright /> John Lazaro 2025
-          <a href={process.env.NEXT_PUBLIC_GITHUB}>
-            <img height={50} width={50} alt='github logo' src='/github-mark-white.png' />
-          </a>
+          <Link href={process.env.NEXT_PUBLIC_GITHUB as string}>
+            <Image height={50} width={50} alt='github logo' src='/github-mark-white.png' />
+          </Link>
         </footer>
       </body>
     </html>

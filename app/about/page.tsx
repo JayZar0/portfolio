@@ -15,23 +15,8 @@ export default function AboutMePage() {
     textAlign: "center",
   }))
 
-  const NestedItem = styled(Paper)(({ theme }) => {
-    return ({
-      backgroundColor: '#bbb',
-      ...theme.typography.body2,
-      padding: theme.spacing(1),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-      ...theme.applyStyles('dark', {
-        backgroundColor: '#1A2027',
-      }),
-      margin: 10,
-      flex: 1,
-    })
-  })
-
   return (
-    <Container>
+    <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
       <Grid container spacing={4}>
         <Grid size={{xs: 12, sm: 12, md: 4}}>
           <Item className="m-1">
@@ -68,62 +53,46 @@ export default function AboutMePage() {
         Languages and Frameworks
       </Typography>
       <Grid container spacing={0} minHeight={300}>
-        <Grid size={3} sx={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <NestedItem>
-            <LanguageComponent language='Vue.js'>
-              Learned during Second year of Computer Systems Technology and was
-              used as a front end for my employee scheduling application project.
-            </LanguageComponent>
-          </NestedItem>
-          <NestedItem>
-            <LanguageComponent language='React'>
-              Learned along side with Next.js for my flyer project application during
-              my second year in Computer Systems Technology.
-            </LanguageComponent>
-          </NestedItem>
+        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
+          <LanguageComponent language='Vue.js'>
+            Learned during Second year of Computer Systems Technology and was
+            used as a front end for my employee scheduling application project.
+          </LanguageComponent>
+          <LanguageComponent language='React'>
+            Learned along side with Next.js for my groups flyer project application during
+            my second year in Computer Systems Technology.
+          </LanguageComponent>
         </Grid>
-        <Grid size={3} sx={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <NestedItem>
-            <LanguageComponent language='C'>
-              Learned basic C in first year engineering and eventually upgraded my knowledge
-              in second year engineering for programming microcontrollers. Learned memory
-              mapping as well as memory manipulation in second year Computer Systems Technology.
-            </LanguageComponent>
-          </NestedItem>
-          <NestedItem>
-            <LanguageComponent language='C#'>
-              Learned in second year to better understand the different data structures and algorithms
-              in programming. Developed our own list, binary trees, hashtables and sorting classes.
-            </LanguageComponent>
-          </NestedItem>
+        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
+          <LanguageComponent language='C'>
+            Learned basic C in first year engineering and eventually upgraded my knowledge
+            in second year engineering for programming microcontrollers. Learned memory
+            mapping as well as memory manipulation in second year Computer Systems Technology.
+          </LanguageComponent>
+          <LanguageComponent language='C#'>
+            Learned in second year to better understand the different data structures and algorithms
+            in programming. Developed our own list, binary trees, hashtables and sorting classes.
+          </LanguageComponent>
         </Grid>
-        <Grid size={3}  sx={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <NestedItem>
-            <LanguageComponent language='SQL'>
-              Learned basic SQL in first year for Computer Systems Technology. Learned advanced querying
-              and interfaces in second year.
-            </LanguageComponent>
-          </NestedItem>
-          <NestedItem>
-            <LanguageComponent language='VBA'>
-              Learned how to create macros and modify them, as well as creating functions to be used in excel
-              for sorting and organizing data.
-            </LanguageComponent>
-          </NestedItem>
+        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
+          <LanguageComponent language='SQL'>
+            Learned basic SQL in first year for Computer Systems Technology. Learned advanced querying
+            and interfaces in second year.
+          </LanguageComponent>
+          <LanguageComponent language='VBA'>
+            Learned how to create macros and modify them, as well as creating functions to be used in excel
+            for sorting and organizing data.
+          </LanguageComponent>
         </Grid>
-        <Grid size={3} sx={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <NestedItem>
-            <LanguageComponent language='Next.js'>
-              Framework used in my school project learning the page router for our research and then eventually
-              learning to use the app router for the actual project.
-            </LanguageComponent>
-          </NestedItem>
-          <NestedItem>
-            <LanguageComponent language='Java'>
-              First language that we learned to use in Computer Systems Technology where I learned the basics of
-              object oriented programming as well as threading, recursion and had my first try at agile programming.
-            </LanguageComponent>
-          </NestedItem>
+        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
+          <LanguageComponent language='Next.js'>
+            Framework used in my school project learning the page router for our research and then eventually
+            learning to use the app router for the actual project.
+          </LanguageComponent>
+          <LanguageComponent language='Java'>
+            First language that we learned to use in Computer Systems Technology where I learned the basics of
+            object oriented programming as well as threading, recursion and had my first try at agile programming.
+          </LanguageComponent>
         </Grid>
       </Grid>
     </Container>
