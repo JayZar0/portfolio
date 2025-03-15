@@ -1,6 +1,6 @@
 'use client'
 
-import {Avatar, Container, Typography} from "@mui/material";
+import {Avatar, Container, Pagination, Typography, Zoom} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import {ContactMail, Phone} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
@@ -9,16 +9,37 @@ import * as React from 'react'
 import LanguageComponent from "@/app/components/language";
 
 export default function AboutMePage() {
+  const [page, setPage] = React.useState(1)
+
+  const items = [
+    { language: "Vue.js", description: "Learned during Second year of Computer Systems Technology and was used as a front end for my employee scheduling application project." },
+    { language: "React", description: "Learned alongside Next.js for my group's flyer project application during my second year in Computer Systems Technology." },
+    { language: "C", description: "Learned basic C in first-year engineering and eventually upgraded my knowledge in second-year engineering for programming microcontrollers. Learned memory mapping as well as memory manipulation in second-year Computer Systems Technology." },
+    { language: "C#", description: "Learned in second year to better understand the different data structures and algorithms in programming. Developed our own list, binary trees, hash tables, and sorting classes." },
+    { language: "SQL", description: "Learned basic SQL in first year for Computer Systems Technology. Learned advanced querying and interfaces in second year." },
+    { language: "VBA", description: "Learned how to create macros and modify them, as well as creating functions to be used in Excel for sorting and organizing data." },
+    { language: "Next.js", description: "Framework used in my school project learning the page router for our research and then eventually learning to use the app router for the actual project." },
+    { language: "Java", description: "First language that we learned to use in Computer Systems Technology where I learned the basics of object-oriented programming as well as threading, recursion, and had my first try at agile programming." },
+    { language: "Prisma", description: "ORM used in the flyer scanner project to allow the application to communicate with the database." },
+  ]
+  const itemsPerPage = 8
+  const totalPages = Math.ceil(items.length / itemsPerPage)
+  const displayedLanguages = items.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
   const Item = styled(Paper)(({theme}) => ({
     backgroundColor: "#fff",
     padding: theme.spacing(1),
     textAlign: "center",
   }))
 
+  function handleChange(_event: React.ChangeEvent<unknown>, value: number) {
+    setPage(value)
+  }
+
   return (
     <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
       <Grid container spacing={4}>
-        <Grid size={{xs: 12, sm: 12, md: 4}}>
+        <Grid size={{xs: 12, sm: 5, md: 4}}>
           <Item className="m-1">
             <Avatar src="john.png" sx={{width: 100, height: 100}}/>
             <Typography variant="h6">John Lazaro</Typography>
@@ -34,7 +55,7 @@ export default function AboutMePage() {
             <Typography variant="body1"></Typography>
           </Item>
         </Grid>
-        <Grid size={{xs: 12, sm: 12, md: 8}}>
+        <Grid size={{xs: 12, sm: 7, md: 8}}>
           <Item>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="p" textAlign="left">
@@ -50,51 +71,37 @@ export default function AboutMePage() {
         </Grid>
       </Grid>
       <Typography variant='h5' component="h5" textAlign="center">
-        Languages and Frameworks
+        Technology and Languages
       </Typography>
-      <Grid container spacing={0} minHeight={300}>
-        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <LanguageComponent language='Vue.js'>
-            Learned during Second year of Computer Systems Technology and was
-            used as a front end for my employee scheduling application project.
-          </LanguageComponent>
-          <LanguageComponent language='React'>
-            Learned along side with Next.js for my groups flyer project application during
-            my second year in Computer Systems Technology.
-          </LanguageComponent>
-        </Grid>
-        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <LanguageComponent language='C'>
-            Learned basic C in first year engineering and eventually upgraded my knowledge
-            in second year engineering for programming microcontrollers. Learned memory
-            mapping as well as memory manipulation in second year Computer Systems Technology.
-          </LanguageComponent>
-          <LanguageComponent language='C#'>
-            Learned in second year to better understand the different data structures and algorithms
-            in programming. Developed our own list, binary trees, hashtables and sorting classes.
-          </LanguageComponent>
-        </Grid>
-        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <LanguageComponent language='SQL'>
-            Learned basic SQL in first year for Computer Systems Technology. Learned advanced querying
-            and interfaces in second year.
-          </LanguageComponent>
-          <LanguageComponent language='VBA'>
-            Learned how to create macros and modify them, as well as creating functions to be used in excel
-            for sorting and organizing data.
-          </LanguageComponent>
-        </Grid>
-        <Grid size={3} sx={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "300"}}>
-          <LanguageComponent language='Next.js'>
-            Framework used in my school project learning the page router for our research and then eventually
-            learning to use the app router for the actual project.
-          </LanguageComponent>
-          <LanguageComponent language='Java'>
-            First language that we learned to use in Computer Systems Technology where I learned the basics of
-            object oriented programming as well as threading, recursion and had my first try at agile programming.
-          </LanguageComponent>
-        </Grid>
-      </Grid>
+      <Grid container columns={12} columnSpacing={2} rowSpacing={2} minHeight={300}>
+        {displayedLanguages.map(({ language, description }) => (
+          <Zoom key={language} in={true} mountOnEnter unmountOnExit>
+            <Grid key={language} size={{ xs: 12, sm: 6, md: 3 }} sx={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "300px", minWidth: "250px" }}>
+              <LanguageComponent language={language}>{description}</LanguageComponent>
+            </Grid>
+          </Zoom>
+        ))}
+      </Grid>        
+      <Pagination
+        count={totalPages}
+        page={page}
+        onChange={handleChange}
+        color="primary"
+        variant="outlined"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          mt: 3,
+          "& .MuiPaginationItem-root": {
+          color: "white", // Make text white
+          borderColor: "white", // Ensure outlined style is visible
+          },
+          "& .MuiPaginationItem-page.Mui-selected": {
+          backgroundColor: "white", // Highlight selected page
+          color: "black", // Make selected page number readable
+          },
+        }}
+      />
     </Container>
   )
 }
