@@ -7,6 +7,7 @@ import {styled} from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import * as React from 'react'
 import LanguageComponent from "@/app/components/language";
+import Link from "next/link";
 
 export default function AboutMePage() {
   const [page, setPage] = React.useState(1)
@@ -21,10 +22,11 @@ export default function AboutMePage() {
     { language: "Next.js", description: "Framework used in my school project learning the page router for our research and then eventually learning to use the app router for the actual project." },
     { language: "Java", description: "First language that we learned to use in Computer Systems Technology where I learned the basics of object-oriented programming as well as threading, recursion, and had my first try at agile programming." },
     { language: "Prisma", description: "ORM used in the flyer scanner project to allow the application to communicate with the database." },
+    { language: "TypeORM", description: "This ORM was used for the employee scheduler to allow the client application to perform full CRUD on the backend database." },
   ]
   const itemsPerPage = 8
   const totalPages = Math.ceil(items.length / itemsPerPage)
-  const displayedLanguages = items.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  const displayedLanguages = items.slice((page - 1) * itemsPerPage, page * itemsPerPage)
 
   const Item = styled(Paper)(({theme}) => ({
     backgroundColor: "#fff",
@@ -39,12 +41,12 @@ export default function AboutMePage() {
   return (
     <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
       <Grid container spacing={4}>
-        <Grid size={{xs: 12, sm: 5, md: 4}}>
+        <Grid size={{xs: 12, sm: 6, md: 4}}>
           <Item className="m-1">
             <Avatar src="john.png" sx={{width: 100, height: 100}}/>
             <Typography variant="h6">John Lazaro</Typography>
             <Typography variant="body1">
-              <ContactMail/> Email: john.e.lazaro@gmail.com
+              <Link href="mailto:john.e.lazaro@gmail.com"><ContactMail/> Email: john.e.lazaro@gmail.com</Link>
             </Typography>
             <Typography variant="body1">
               <Phone/> Phone Number: (306)850-8737
@@ -55,7 +57,7 @@ export default function AboutMePage() {
             <Typography variant="body1"></Typography>
           </Item>
         </Grid>
-        <Grid size={{xs: 12, sm: 7, md: 8}}>
+        <Grid size={{xs: 12, sm: 6, md: 8}}>
           <Item>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="p" textAlign="left">
