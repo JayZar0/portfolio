@@ -1,15 +1,26 @@
 'use client'
 
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
-import MuseumIcon from '@mui/icons-material/Museum';
 import {useState} from "react";
-import {Close, Home, Menu} from "@mui/icons-material";
-import {redirect} from "next/navigation";
-import {SpeedDial, SpeedDialAction, SpeedDialIcon} from "@mui/material";
+import {Article, Close, Home, Menu} from "@mui/icons-material";
+import {redirect, usePathname} from "next/navigation";
+import {SpeedDial, SpeedDialAction, SpeedDialIcon, Tabs, Tab, useTheme, useMediaQuery} from "@mui/material";
 
 
 export default function NavBar() {
+  const menuItems = [
+    { title: 'Home', icon: <Home />, navigation: process.env.NEXT_PUBLIC_HOME },
+    { title: 'About Me', icon: <AssignmentIndIcon />, navigation: process.env.NEXT_PUBLIC_ABOUT },
+    { title: 'Projects', icon: <Article />, navigation: process.env.NEXT_PUBLIC_ARTIFACTS }
+  ]
+
+  const relativePath = usePathname()
+
   const [open, setOpen] = useState<boolean>(false)
+  const [index, setIndex] = useState<number>(menuItems.findIndex(({navigation}) => navigation === relativePath))
+
+  const theme = useTheme()
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"))
 
   function handleOpen() {
     setOpen(true)
@@ -19,14 +30,9 @@ export default function NavBar() {
     setOpen(false)
   }
 
-  const menuItems = [
-    { title: 'Home', icon: <Home />, navigation: process.env.NEXT_PUBLIC_HOME },
-    { title: 'About Me', icon: <AssignmentIndIcon />, navigation: process.env.NEXT_PUBLIC_ABOUT },
-    { title: 'Artifacts', icon: <MuseumIcon />, navigation: process.env.NEXT_PUBLIC_ARTIFACTS }
-  ]
-
   function handleSelection(navigation: string | undefined) {
     setOpen(false)
+    setIndex(menuItems.findIndex(({navigation: nav}) => nav === navigation))
     if (navigation != null) {
       redirect(navigation)
     }
@@ -34,19 +40,52 @@ export default function NavBar() {
 
   return (
     <>
+      <Tabs 
+        value={index}
+        variant="fullWidth"
+        indicatorColor="secondary"
+        textColor='inherit'
+        hidden={!isDesktop}
+        sx= {{
+          position: 'fixed',
+          width: '100%',
+          zIndex: 1,
+          textColor: theme.palette.text.primary,
+          backgroundColor: theme.palette.primary.dark,
+        }}
+      >
+        {menuItems.map(({title, icon, navigation}) => (
+          <Tab
+           key={title}
+           icon={icon} 
+           label={title} 
+           onClick={() => handleSelection(navigation)} 
+          />
+        ))}
+      </Tabs>
       <SpeedDial
-        ariaLabel="SpeedDial tooltip example"
+        ariaLabel="Mobile Navigation"
         sx={{ position: 'fixed', bottom: 16, right: 16 }}
         icon={<SpeedDialIcon icon={<Menu />} openIcon={<Close />} />}
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
+        hidden={isDesktop}
       >
         {menuItems.map((item) => (
           <SpeedDialAction
             key={item.title}
             icon={item.icon}
             title={item.title}
+            slotProps={{
+              tooltip: {
+                title: item.title,
+                open: true,
+                onClick: () => {
+                  handleSelection(item.navigation)
+                }
+              }
+            }}
             onClick={() => handleSelection(item.navigation)}
           />
         ))}

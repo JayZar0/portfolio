@@ -1,6 +1,6 @@
 'use client'
 
-import {Avatar, Container, Pagination, Typography, Zoom, useTheme} from "@mui/material";
+import {Avatar, Container, List, ListItemText, Pagination, Typography, Zoom, useTheme} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import {ContactMail, Phone} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function AboutMePage() {
   const [page, setPage] = React.useState(1)
 
-  const theme = useTheme();
+  const theme = useTheme()
   const isDarkMode = theme.palette.mode === "dark"
 
   const items = [
@@ -35,9 +35,10 @@ export default function AboutMePage() {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1),
     textAlign: "center",
-    p: 2,
+    p: 10,
     borderRadius: 2,
     boxShadow: isDarkMode ? "0px 4px 10px rgba(255,255,255,0.2)" : "0px 4px 10px rgba(0,0,0,0.2)",
+    margin: 10,
   }))
 
   function handleChange(_event: React.ChangeEvent<unknown>, value: number) {
@@ -59,8 +60,13 @@ export default function AboutMePage() {
             </Typography>
           </Item>
           <Item className="m-1">
-            <Typography variant="h6">Skills and Experience</Typography>
-            <Typography variant="body1"></Typography>
+            <Typography variant="h6">Experience</Typography>
+            <List>
+              <ListItemText>
+                <Typography variant="subtitle1">Project Management Class in Saskatchewan Polytechnic</Typography>
+                <Typography variant="caption">Created a full-stack application with a group that scans flyers and inputs the data into a database.</Typography>
+              </ListItemText>
+            </List>
           </Item>
         </Grid>
         <Grid size={{xs: 12, sm: 6, md: 8}}>
