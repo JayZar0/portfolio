@@ -1,6 +1,6 @@
 'use client'
 
-import {Avatar, Container, Pagination, Typography, Zoom} from "@mui/material";
+import {Avatar, Container, Pagination, Typography, Zoom, useTheme} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import {ContactMail, Phone} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
@@ -11,6 +11,9 @@ import Link from "next/link";
 
 export default function AboutMePage() {
   const [page, setPage] = React.useState(1)
+
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === "dark"
 
   const items = [
     { language: "Vue.js", description: "Learned during Second year of Computer Systems Technology and was used as a front end for my employee scheduling application project." },
@@ -29,9 +32,12 @@ export default function AboutMePage() {
   const displayedLanguages = items.slice((page - 1) * itemsPerPage, page * itemsPerPage)
 
   const Item = styled(Paper)(({theme}) => ({
-    backgroundColor: "#fff",
+    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1),
     textAlign: "center",
+    p: 2,
+    borderRadius: 2,
+    boxShadow: isDarkMode ? "0px 4px 10px rgba(255,255,255,0.2)" : "0px 4px 10px rgba(0,0,0,0.2)",
   }))
 
   function handleChange(_event: React.ChangeEvent<unknown>, value: number) {
@@ -78,7 +84,17 @@ export default function AboutMePage() {
       <Grid container columns={12} columnSpacing={2} rowSpacing={2} minHeight={300}>
         {displayedLanguages.map(({ language, description }) => (
           <Zoom key={language} in={true} mountOnEnter unmountOnExit>
-            <Grid key={language} size={{ xs: 12, sm: 6, md: 3 }} sx={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "300px", minWidth: "250px" }}>
+            <Grid 
+              key={language}
+              size={{ xs: 12, sm: 6, md: 3 }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "stretch",
+                height: "300px",
+                minWidth: "250px",
+              }}
+            >
               <LanguageComponent language={language}>{description}</LanguageComponent>
             </Grid>
           </Zoom>
@@ -95,12 +111,12 @@ export default function AboutMePage() {
           justifyContent: "center",
           mt: 3,
           "& .MuiPaginationItem-root": {
-          color: "white", // Make text white
-          borderColor: "white", // Ensure outlined style is visible
+            color: theme.palette.text.primary,
+            borderColor: theme.palette.text.primary,
           },
           "& .MuiPaginationItem-page.Mui-selected": {
-          backgroundColor: "white", // Highlight selected page
-          color: "black", // Make selected page number readable
+            backgroundColor: theme.palette.text.primary,
+            color: theme.palette.background.default,
           },
         }}
       />

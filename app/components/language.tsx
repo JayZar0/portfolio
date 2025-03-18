@@ -1,4 +1,4 @@
-import {Divider, Typography} from "@mui/material";
+import {Divider, Typography, useTheme} from "@mui/material";
 import * as React from "react";
 import {styled} from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -10,18 +10,20 @@ import Paper from "@mui/material/Paper";
  * @constructor
  */
 const NestedItem = styled(Paper)(({ theme }) => {
+  const isDarkMode = theme.palette.mode === "dark"
+
   return ({
-    backgroundColor: '#bbb',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-      backgroundColor: '#1A2027',
-    }),
     margin: 10,
     flex: 1,
     minHeight: '250px',
+    bgcolor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
+    p: 2,
+    borderRadius: 2,
+    boxShadow: isDarkMode ? "0px 4px 10px rgba(255,255,255,0.2)" : "0px 4px 10px rgba(0,0,0,0.2)",
   })
 })
 

@@ -6,6 +6,7 @@ import {Copyright} from "@mui/icons-material";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Providers } from './components/provider'
 
 
 const geistSans = Geist({
@@ -32,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
-        {children}
+        <Providers>{children}</Providers>
         <footer className="content-center items-center text-center">
           Developed with Next.js <Copyright /> John Lazaro 2025
           <Link href={process.env.NEXT_PUBLIC_GITHUB as string}>
