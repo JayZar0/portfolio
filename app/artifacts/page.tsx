@@ -15,7 +15,7 @@ export default function ArtifactsPage() {
         main menu. There was also a plan to create a settings screen which would have been
         used to added sound to the application.
       </Artifact>
-      <Artifact stack='Vue Node Express TypeORM SQLite3' title='Scheduling Application'>
+      <Artifact stack='Vue Express TypeORM SQLite3' title='Scheduling Application'>
         A barebones employee scheduling app that has many tables in a
         database that can be used to store employees, shifts, and departments. There
         will be authentication for employees who have credentials stored in the database.

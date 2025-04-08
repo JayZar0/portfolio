@@ -26,6 +26,8 @@ export default function AboutMePage() {
     { language: "Java", description: "First language that we learned to use in Computer Systems Technology where I learned the basics of object-oriented programming as well as threading, recursion, and had my first try at agile programming." },
     { language: "Prisma", description: "ORM used in the flyer scanner project to allow the application to communicate with the database." },
     { language: "TypeORM", description: "This ORM was used for the employee scheduler to allow the client application to perform full CRUD on the backend database." },
+    { language: "Ionic", description: "A frame work for cross-platform mobile development that I learned to use on my own. I did research as I had full interest in making a mobile application." },
+    { language: "Python", description: "Self-studied out of interest of creating simple scripts. Developed a webscraper with python and used it for job scraping." }
   ]
   const itemsPerPage = 8
   const totalPages = Math.ceil(items.length / itemsPerPage)
@@ -74,12 +76,13 @@ export default function AboutMePage() {
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="p" textAlign="left">
               I started off as a student in electronics engineering with the interest of developing
-              robotics. However, as time went on I found myself struggling when it came to developing hardware
-              from scratch. Throughout my time of struggle in the engineering field, I started taking an interest
-              towards software development since there are many similarities and also programming is a big portion
-              of the electronic engineering field as well. Ever since the swap I&#39;ve been enjoying my time in
-              the Computer Systems Technology program studying about networking, operating systems, software
-              development, database management and project management.
+              robotics. However, as time went on I found myself more interested in the programming
+              aspect of the field and eventually developed interest in software development. That was
+              when I decided to do some research into a software program in Saskatchewan Polytechnic
+              and found Computer Systems Technology. I decided to register for the program and learned
+              more than I had expected such as networking, database administration and cybersecurity.
+              I had also learned about software development and the workflow of a project team when
+              it comes to developing a full stack application.
             </Typography>
           </Item>
         </Grid>
