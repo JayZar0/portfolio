@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import {Divider} from "@mui/material";
+import {CardMedia, Divider} from "@mui/material";
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -20,7 +20,7 @@ export default function Artifact({
     // TODO add an image tag that will take the image of the project for displaying
     <Card className="m-5">
       <CardContent>
-        <Image alt="" src={image as string | ''} />
+        <Image width={800} height={800} alt="" src={image as string} className="float-left m-5" />
         <Typography variant='h6' component="h6">{ title }</Typography>
         <Typography variant='caption' component='p' color='gray'>Tech Stack: { stack }</Typography>
         <Divider />
