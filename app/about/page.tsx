@@ -1,13 +1,22 @@
 'use client'
 
-import {Avatar, Container, List, ListItemText, Pagination, Typography, Zoom, useTheme} from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import {
+  Avatar,
+  Container,
+  List,
+  ListItemText,
+  Pagination,
+  Typography,
+  Zoom,
+  useTheme,
+  Link
+} from "@mui/material";
+import Grid from "@mui/material/Grid";
 import {ContactMail, Phone} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import * as React from 'react'
 import LanguageComponent from "@/app/components/language";
-import Link from "next/link";
 
 export default function AboutMePage() {
   const [page, setPage] = React.useState(1)
@@ -55,7 +64,7 @@ export default function AboutMePage() {
             <Avatar src="john.png" sx={{width: 100, height: 100}}/>
             <Typography variant="h6">John Lazaro</Typography>
             <Typography variant="body1">
-              <Link href="mailto:john.e.lazaro@gmail.com"><ContactMail/> Email: john.e.lazaro@gmail.com</Link>
+              <ContactMail/>Email: <Link href="mailto:john.e.lazaro@gmail.com" underline="hover">john.e.lazaro@gmail.com</Link>
             </Typography>
             <Typography variant="body1">
               <Phone/> Phone Number: (306)850-8737
@@ -66,7 +75,7 @@ export default function AboutMePage() {
             <List>
               <ListItemText>
                 <Typography variant="subtitle1">Project Management Class in Saskatchewan Polytechnic</Typography>
-                <Typography variant="caption">Created a full-stack application with a group that scans flyers and inputs the data into a database.</Typography>
+                <Typography variant="caption">Created a full-stack application with a group that scans flyers and inputs the products that the client sells into a database.</Typography>
               </ListItemText>
             </List>
           </Item>

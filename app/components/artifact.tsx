@@ -17,7 +17,6 @@ export default function Artifact({
   children?: React.ReactNode
 }) {
   return (
-    // TODO add an image tag that will take the image of the project for displaying
     <Card className="m-5">
       <CardContent>
         <Image width={800} height={800} alt="" src={image as string} className="float-left m-5" />

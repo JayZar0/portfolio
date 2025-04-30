@@ -20,7 +20,7 @@ export default function NavBar() {
   const [index, setIndex] = useState<number>(menuItems.findIndex(({navigation}) => navigation === relativePath))
 
   const theme = useTheme()
-  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"))
+  const isMobile = useMediaQuery(theme.breakpoints.up("sm"))
 
   function handleOpen() {
     setOpen(true)
@@ -45,7 +45,7 @@ export default function NavBar() {
         variant="fullWidth"
         indicatorColor="secondary"
         textColor='inherit'
-        hidden={!isDesktop}
+        hidden={!isMobile}
         sx= {{
           position: 'fixed',
           width: '100%',
@@ -70,7 +70,7 @@ export default function NavBar() {
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
-        hidden={isDesktop}
+        hidden={isMobile}
       >
         {menuItems.map((item) => (
           <SpeedDialAction
