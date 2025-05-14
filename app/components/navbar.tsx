@@ -42,7 +42,7 @@ export default function NavBar() {
     <>
       <Tabs 
         value={index}
-        variant="fullWidth"
+        variant="standard"
         indicatorColor="secondary"
         textColor='inherit'
         hidden={!isMobile}
@@ -58,8 +58,9 @@ export default function NavBar() {
           <Tab
            key={title}
            icon={icon} 
-           label={title} 
-           onClick={() => handleSelection(navigation)} 
+           label={title}
+           iconPosition='start'
+           onClick={() => handleSelection(navigation)}
           />
         ))}
       </Tabs>
