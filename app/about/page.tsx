@@ -9,9 +9,9 @@ import {
   Typography,
   Zoom,
   useTheme,
-  Link
+  Link,
+  Grid2
 } from "@mui/material";
-import Grid from "@mui/material/Grid";
 import {ContactMail, Phone} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -58,8 +58,8 @@ export default function AboutMePage() {
 
   return (
     <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-      <Grid container spacing={4}>
-        <Grid size={{xs: 12, sm: 6, md: 4}}>
+      <Grid2 container spacing={4}>
+        <Grid2 size={{xs: 12, sm: 6, md: 4}}>
           <Item className="m-1">
             <Avatar src="john.png" sx={{width: 100, height: 100}}/>
             <Typography variant="h6">John Lazaro</Typography>
@@ -79,8 +79,8 @@ export default function AboutMePage() {
               </ListItemText>
             </List>
           </Item>
-        </Grid>
-        <Grid size={{xs: 12, sm: 6, md: 8}}>
+        </Grid2>
+        <Grid2 size={{xs: 12, sm: 6, md: 8}}>
           <Item>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="p" textAlign="left">
@@ -94,15 +94,15 @@ export default function AboutMePage() {
               it comes to developing a full stack application.
             </Typography>
           </Item>
-        </Grid>
-      </Grid>
+        </Grid2>
+      </Grid2>
       <Typography variant='h5' component="h5" textAlign="center">
         Technology and Languages
       </Typography>
-      <Grid container columns={12} columnSpacing={2} rowSpacing={2} minHeight={300}>
+      <Grid2 container columns={12} columnSpacing={2} rowSpacing={2} minHeight={300}>
         {displayedLanguages.map(({ language, description }) => (
           <Zoom key={language} in={true} mountOnEnter unmountOnExit>
-            <Grid 
+            <Grid2 
               key={language}
               size={{ xs: 12, sm: 6, md: 3 }}
               sx={{
@@ -114,10 +114,10 @@ export default function AboutMePage() {
               }}
             >
               <LanguageComponent language={language}>{description}</LanguageComponent>
-            </Grid>
+            </Grid2>
           </Zoom>
         ))}
-      </Grid>        
+      </Grid2>        
       <Pagination
         count={totalPages}
         page={page}

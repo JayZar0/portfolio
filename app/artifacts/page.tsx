@@ -1,5 +1,4 @@
-import Typography from '@mui/material/Typography';
-import {Container} from "@mui/material";
+import {Container, Typography} from "@mui/material";
 import Artifact from "@/app/components/artifact";
 
 

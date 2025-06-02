@@ -1,8 +1,10 @@
-import Typography from "@mui/material/Typography";
-import {Divider} from "@mui/material";
+import {
+  Divider, 
+  Typography, 
+  Card, 
+  CardContent
+} from "@mui/material";
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Image from "next/image";
 
 export default function Artifact({

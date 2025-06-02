@@ -4,7 +4,15 @@ import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import {useState} from "react";
 import {Article, Close, Home, Menu} from "@mui/icons-material";
 import {redirect, usePathname} from "next/navigation";
-import {SpeedDial, SpeedDialAction, SpeedDialIcon, Tabs, Tab, useTheme, useMediaQuery} from "@mui/material";
+import {
+  SpeedDial, 
+  SpeedDialAction, 
+  SpeedDialIcon, 
+  Tabs, 
+  Tab, 
+  useTheme, 
+  useMediaQuery
+} from "@mui/material";
 
 
 export default function NavBar() {
