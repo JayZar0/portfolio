@@ -4,7 +4,15 @@ import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import {useState} from "react";
 import {Article, Close, Home, Menu} from "@mui/icons-material";
 import {redirect, usePathname} from "next/navigation";
-import {SpeedDial, SpeedDialAction, SpeedDialIcon, Tabs, Tab, useTheme, useMediaQuery} from "@mui/material";
+import {
+  SpeedDial, 
+  SpeedDialAction, 
+  SpeedDialIcon, 
+  Tabs, 
+  Tab, 
+  useTheme, 
+  useMediaQuery
+} from "@mui/material";
 
 
 export default function NavBar() {
@@ -42,7 +50,7 @@ export default function NavBar() {
     <>
       <Tabs 
         value={index}
-        variant="fullWidth"
+        variant="standard"
         indicatorColor="secondary"
         textColor='inherit'
         hidden={!isMobile}
@@ -58,8 +66,9 @@ export default function NavBar() {
           <Tab
            key={title}
            icon={icon} 
-           label={title} 
-           onClick={() => handleSelection(navigation)} 
+           label={title}
+           iconPosition='start'
+           onClick={() => handleSelection(navigation)}
           />
         ))}
       </Tabs>
