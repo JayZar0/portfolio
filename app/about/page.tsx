@@ -10,7 +10,7 @@ import {
   Zoom,
   useTheme,
   Link,
-  Grid2
+  Grid
 } from "@mui/material";
 import {ContactMail, Phone} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
@@ -58,8 +58,8 @@ export default function AboutMePage() {
 
   return (
     <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-      <Grid2 container spacing={4}>
-        <Grid2 size={{xs: 12, sm: 6, md: 4}}>
+      <Grid container spacing={4}>
+        <Grid size={{xs: 12, sm: 6, md: 4}}>
           <Item className="m-1">
             <Avatar src="john.png" sx={{width: 100, height: 100}}/>
             <Typography variant="h6">John Lazaro</Typography>
@@ -79,8 +79,8 @@ export default function AboutMePage() {
               </ListItemText>
             </List>
           </Item>
-        </Grid2>
-        <Grid2 size={{xs: 12, sm: 6, md: 8}}>
+        </Grid>
+        <Grid size={{xs: 12, sm: 6, md: 8}}>
           <Item>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="p" textAlign="left">
@@ -94,15 +94,15 @@ export default function AboutMePage() {
               it comes to developing a full stack application.
             </Typography>
           </Item>
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
       <Typography variant='h5' component="h5" textAlign="center">
         Technology and Languages
       </Typography>
-      <Grid2 container columns={12} columnSpacing={2} rowSpacing={2} minHeight={300}>
+      <Grid container columns={12} columnSpacing={2} rowSpacing={2} minHeight={300}>
         {displayedLanguages.map(({ language, description }) => (
           <Zoom key={language} in={true} mountOnEnter unmountOnExit>
-            <Grid2 
+            <Grid 
               key={language}
               size={{ xs: 12, sm: 6, md: 3 }}
               sx={{
@@ -114,10 +114,10 @@ export default function AboutMePage() {
               }}
             >
               <LanguageComponent language={language}>{description}</LanguageComponent>
-            </Grid2>
+            </Grid>
           </Zoom>
         ))}
-      </Grid2>        
+      </Grid>        
       <Pagination
         count={totalPages}
         page={page}

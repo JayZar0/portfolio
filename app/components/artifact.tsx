@@ -1,13 +1,4 @@
-<<<<<<< HEAD
 import {Divider, Typography, Card, CardContent} from "@mui/material";
-=======
-import {
-  Divider, 
-  Typography, 
-  Card, 
-  CardContent
-} from "@mui/material";
->>>>>>> beaf93061ba708676297b361b1daf4adc7691a7b
 import React from "react";
 import Image from "next/image";
 
