@@ -18,6 +18,10 @@ import Paper from "@mui/material/Paper";
 import * as React from 'react'
 import LanguageComponent from "@/app/components/language";
 
+/**
+ * This is the about page where it displays all of my information
+ * @returns The about page
+ */
 export default function AboutMePage() {
   const [page, setPage] = React.useState(1)
 
@@ -52,6 +56,9 @@ export default function AboutMePage() {
     margin: 10,
   }))
 
+  /**
+   * This function will perform the page change for the languages and the frameworks
+   */
   function handleChange(_event: React.ChangeEvent<unknown>, value: number) {
     setPage(value)
   }

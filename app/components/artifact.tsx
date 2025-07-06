@@ -2,6 +2,12 @@ import {Divider, Typography, Card, CardContent} from "@mui/material";
 import React from "react";
 import Image from "next/image";
 
+/**
+ * This is the artifact component that will store the projects that I have created
+ * on the artifacts page
+ * @param param0
+ * @returns 
+ */
 export default function Artifact({
   title,
   stack,

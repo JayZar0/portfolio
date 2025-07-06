@@ -14,7 +14,9 @@ import {
   useMediaQuery
 } from "@mui/material";
 
-
+/**
+ * This is the navbar component that will allow the user to navigate around the page 
+ */
 export default function NavBar() {
   const menuItems = [
     { title: 'Home', icon: <Home />, navigation: process.env.NEXT_PUBLIC_HOME },

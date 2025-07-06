@@ -1,7 +1,11 @@
 import {Container, Typography} from "@mui/material";
 import Artifact from "@/app/components/artifact";
 
-
+/**
+ * This is the artifacts page that will showcase all the projects that I have
+ * worked on
+ * @returns 
+ */
 export default function ArtifactsPage() {
   return (
     <Container className='m-2 items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>

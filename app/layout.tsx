@@ -6,7 +6,7 @@ import {Copyright} from "@mui/icons-material";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Providers } from './components/provider'
+import { Providers } from './components/provider';
 
 
 const geistSans = Geist({
@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   description: "Portfolio about John Lazaro",
 };
 
+/**
+ * This is the main layout of all the pages
+ * @param param0 
+ * @returns 
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

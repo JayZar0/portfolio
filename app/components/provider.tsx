@@ -8,11 +8,17 @@ const ThemeContext = createContext({ darkMode: false, toggleTheme: () => {} });
 
 export const useCustomTheme = () => useContext(ThemeContext);
 
+/**
+ * This function allows the page to change theme based on user preferences in
+ * dark and light mode
+ * @param param0 
+ * @returns 
+ */
 export function Providers({ children }: { children: React.ReactNode }) {
   const systemPrefersDark = useMediaQuery("(prefers-color-scheme: dark)");
   const [darkMode, setDarkMode] = useState(systemPrefersDark);
 
-  // 🔄 Update when system preference changes
+  // update when system preference changes
   useEffect(() => {
     setDarkMode(systemPrefersDark);
   }, [systemPrefersDark]);

@@ -27,6 +27,12 @@ const NestedItem = styled(Paper)(({ theme }) => {
   })
 })
 
+/**
+ * This component will store the programming languages and technologies that I have
+ * learned throughout my life
+ * @param param0 
+ * @returns 
+ */
 export default function LanguageComponent({language, children}: {language?: string, children?:React.ReactNode}) {
   return (
     <NestedItem>

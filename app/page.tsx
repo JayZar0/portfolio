@@ -1,6 +1,9 @@
 import {Box, Typography} from "@mui/material";
 
-
+/**
+ * This is the Home page where the users are directed when visiting the page
+ * @returns 
+ */
 export default function Home() {
   return (
     <Box
