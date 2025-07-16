@@ -30,7 +30,7 @@ export default function AboutMePage() {
 
   const items = [
     { language: "Vue.js", description: "Learned during Second year of Computer Systems Technology and was used as a front end for my employee scheduling application project." },
-    { language: "React", description: "Learned alongside Next.js for my group's flyer project application during my second year in Computer Systems Technology." },
+    { language: "React", description: "Learned alongside Next.js for my groups flyer project application during my second year in Computer Systems Technology." },
     { language: "C", description: "Learned basic C in first-year engineering and eventually upgraded my knowledge in second-year engineering for programming microcontrollers. Learned memory mapping as well as memory manipulation in second-year Computer Systems Technology." },
     { language: "C#", description: "Learned in second year to better understand the different data structures and algorithms in programming. Developed our own list, binary trees, hash tables, and sorting classes." },
     { language: "SQL", description: "Learned basic SQL in first year for Computer Systems Technology. Learned advanced querying and interfaces in second year." },
@@ -39,8 +39,10 @@ export default function AboutMePage() {
     { language: "Java", description: "First language that we learned to use in Computer Systems Technology where I learned the basics of object-oriented programming as well as threading, recursion, and had my first try at agile programming." },
     { language: "Prisma", description: "ORM used in the flyer scanner project to allow the application to communicate with the database." },
     { language: "TypeORM", description: "This ORM was used for the employee scheduler to allow the client application to perform full CRUD on the backend database." },
-    { language: "Ionic", description: "A frame work for cross-platform mobile development that I learned to use on my own. I did research as I had full interest in making a mobile application." },
-    { language: "Python", description: "Self-studied out of interest of creating simple scripts. Developed a webscraper with python and used it for job scraping." }
+    { language: "Ionic", description: "A frame work for cross-platform mobile development that I learned to use on my own. I did research as I had full interest in making a mobile application. I am currently working on creating an administration dashboard using Ionic." },
+    { language: "Python", description: "Self-studied out of interest of creating simple scripts. Developed a webscraper with python and used it for job scraping. In emerging technologies I learned to create generative models using pytorch." },
+    { language: "Bash", description: "First scripting language learned during Advanced Operating systems to automate administrative tasks on linux" },
+    { language: "Perl", description: "Scripting language learned during the second year during Advanced Operating systems to replace bash" }
   ]
   const itemsPerPage = 8
   const totalPages = Math.ceil(items.length / itemsPerPage)
