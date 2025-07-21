@@ -41,8 +41,10 @@ export default function AboutMePage() {
     { language: "TypeORM", description: "This ORM was used for the employee scheduler to allow the client application to perform full CRUD on the backend database." },
     { language: "Ionic", description: "A frame work for cross-platform mobile development that I learned to use on my own. I did research as I had full interest in making a mobile application. I am currently working on creating an administration dashboard using Ionic." },
     { language: "Python", description: "Self-studied out of interest of creating simple scripts. Developed a webscraper with python and used it for job scraping. In emerging technologies I learned to create generative models using pytorch." },
-    { language: "Bash", description: "First scripting language learned during Advanced Operating systems to automate administrative tasks on linux" },
-    { language: "Perl", description: "Scripting language learned during the second year during Advanced Operating systems to replace bash" }
+    { language: "Bash", description: "First scripting language learned during Advanced Operating systems to automate administrative tasks on linux." },
+    { language: "Perl", description: "Scripting language learned during the second year during Advanced Operating systems to replace bash." },
+    { language: "Jest", description: "Used for unit testing the flyer scanner application to make sure the server routes in Next.js were functional." },
+    { language: "Cypress", description: "Used for UI testing the flyer scanner application to make sure that the applications UI features were doing what was shown in our sequence diagrams and testing charts." }
   ]
   const itemsPerPage = 8
   const totalPages = Math.ceil(items.length / itemsPerPage)
