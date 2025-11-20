@@ -86,7 +86,7 @@ export default function AboutMePage() {
             <List>
               <ListItemText>
                 <Typography variant="subtitle1">Project Management Class in Saskatchewan Polytechnic</Typography>
-                <Typography variant="caption">Created a full-stack application with a group that scans flyers and inputs the products that the client sells into a database.</Typography>
+                <Typography variant="caption">Created a full-stack application with a group that scans flyers and inputs the products in the clients inventory into a database.</Typography>
               </ListItemText>
             </List>
           </Item>
