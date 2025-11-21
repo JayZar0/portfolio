@@ -68,7 +68,7 @@ export default function AboutMePage() {
   }
 
   return (
-    <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+    <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-(family-name:--font-geist-sans)'>
       <Grid container spacing={4}>
         <Grid size={{xs: 12, sm: 6, md: 4}}>
           <Item className="m-1">

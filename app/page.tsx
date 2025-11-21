@@ -18,7 +18,7 @@ export default function Home() {
         pb-20 
         gap-16 
         sm:p-20 
-        font-[family-name:var(--font-geist-sans)]
+        font-(family-name:--font-geist-sans)
       "
     >
       <Typography variant='h1' className="row-start-2">John Lazaro</Typography>

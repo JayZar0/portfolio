@@ -8,7 +8,7 @@ import Artifact from "@/app/components/artifact";
  */
 export default function ArtifactsPage() {
   return (
-    <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+    <Container className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-(family-name:--font-geist-sans)'>
       <Typography variant='h4' component='h4' margin={5}>Projects</Typography>
       <Artifact stack='Vue Express TypeORM SQLite3' title='Scheduling Application' image='/scheduler.png'>
         A barebones employee scheduling app that has many tables in a
