@@ -1,4 +1,4 @@
-import {Box, Typography} from "@mui/material";
+import {Box, Typography, List, ListItem} from "@mui/material";
 
 /**
  * This is the Home page where the users are directed when visiting the page
@@ -22,7 +22,11 @@ export default function Home() {
       "
     >
       <Typography variant='h1' className="row-start-2">John Lazaro</Typography>
-      <Typography variant='subtitle1' className="row-start-3 align-top">Computer Systems Technology Student</Typography>
+      <List className='row-start-3 align-top'>
+        <ListItem><Typography variant='subtitle1'>Experienced Troubleshooter</Typography></ListItem>
+        <ListItem><Typography variant='subtitle1'>Aspiring Programmer</Typography></ListItem>
+        <ListItem><Typography variant='subtitle1'>Cybersecurity Enthusiast</Typography></ListItem>
+      </List>
     </Box>
   )
 }
