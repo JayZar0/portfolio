@@ -22,7 +22,7 @@ export default function Artifact({
   return (
     <Card className="m-5">
       <CardContent>
-        <Image width={800} height={800} alt="" src={image as string} className="p-3" />
+        <Image width={800} height={800} alt="" src={image as string} className="p-3 float-left" />
         <Typography variant='h6' component="h6">{ title }</Typography>
         <Typography variant='caption' component='p' color='gray'>Tech Stack: { stack }</Typography>
         <Divider />

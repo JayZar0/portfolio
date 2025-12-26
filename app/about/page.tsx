@@ -11,12 +11,14 @@ import {
   useTheme,
   Link,
   Grid
-} from "@mui/material";
-import {ContactMail, Phone} from "@mui/icons-material";
-import {styled} from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
+} from "@mui/material"
+import {ContactMail, Phone} from "@mui/icons-material"
+import {styled} from "@mui/material/styles"
+import Paper from "@mui/material/Paper"
 import * as React from 'react'
-import LanguageComponent from "@/app/components/language";
+import LanguageComponent from "@/app/components/language"
+import ContactForm from "../components/contactform"
+
 
 /**
  * This is the about page where it displays all of my information
@@ -78,7 +80,7 @@ export default function AboutMePage() {
               <ContactMail/>Email: <Link href="mailto:john.e.lazaro@gmail.com" underline="hover">john.e.lazaro@gmail.com</Link>
             </Typography>
             <Typography variant="body1">
-              <Phone/> Phone Number: (306)850-8737
+              <Phone/> Phone Number: (306) 850-8737
             </Typography>
           </Item>
           <Item className="m-1">
@@ -94,7 +96,7 @@ export default function AboutMePage() {
         <Grid size={{xs: 12, sm: 6, md: 8}}>
           <Item>
             <Typography variant="h6">About</Typography>
-            <Typography variant="body1" component="p" textAlign="left">
+            <Typography variant="body1" component="p" textAlign="justify">
               I started off as a student in electronics engineering with the interest of developing
               robotics. However, as time went on I found myself more interested in the programming
               aspect of the field and eventually developed interest in software development. That was
@@ -104,6 +106,10 @@ export default function AboutMePage() {
               I had also learned about software development and the workflow of a project team when
               it comes to developing a full stack application.
             </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6">Contact Me</Typography>
+            <ContactForm />
           </Item>
         </Grid>
       </Grid>
