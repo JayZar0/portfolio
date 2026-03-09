@@ -112,7 +112,7 @@ export default function AboutMePage() {
         </Item>
         <ArrowDownwardIcon className='right-1/2 bottom-0 fixed animate-bounce' />
       </div>
-      <div className='experience fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_75%_75%] from-red-500 via-red-700 to-red-950 z-400'>
+      <div className='experience fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_75%_75%] from-red-500 via-red-700 to-red-950 p-10 z-400'>
         <Item>
           <ExperienceComponent />
         </Item>
