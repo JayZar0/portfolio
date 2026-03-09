@@ -39,7 +39,6 @@ export default function AboutMePage() {
     p: 10,
     borderRadius: 20,
     boxShadow: isDarkMode ? "0px 4px 10px rgba(255,255,255,0.2)" : "0px 4px 10px rgba(0,0,0,0.2)",
-    // margin: 10,
     position: 'relative',
     left: '50%',
     top: '50%',
@@ -87,10 +86,10 @@ export default function AboutMePage() {
     gsap.to('.projects', {
       scrollTrigger: {
         start: 2300,
-        end: 2800,
+        end: 2900,
         scrub: true
       },
-      y: -500
+      y: -600
     })
 
     gsap.to('.scrollbar', {
@@ -105,20 +104,20 @@ export default function AboutMePage() {
 
 
   return (
-    <div className='min-h-860 max-w-screen sm:p-20 font-(family-name:--font-geist-sans) overflow-x-clip'>
+    <div className='min-h-310 max-w-screen sm:p-20 font-(family-name:--font-geist-sans) overflow-x-clip'>
       <span className='scrollbar fixed bg-purple-500 min-w-screen h-1 -left-350 top-0 z-5000'></span>
-      <div id='about' className='about fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_25%_25%] from-gray-500 via-gray-700 to-gray-950  bg-gray-700 p-10 z-500'>
+      <div className='about fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_25%_25%] from-gray-500 via-gray-700 to-gray-950  bg-gray-700 p-10 z-500'>
         <Item>
           <AboutComponent />
         </Item>
         <ArrowDownwardIcon className='right-1/2 bottom-0 fixed animate-bounce' />
       </div>
-      <div id='experience' className='experience fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_75%_75%] from-red-500 via-red-700 to-red-950 z-400'>
+      <div className='experience fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_75%_75%] from-red-500 via-red-700 to-red-950 z-400'>
         <Item>
           <ExperienceComponent />
         </Item>
       </div>
-      <div id='tech' className='tech fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_75%_25%] from-blue-500 via-blue-700 to-blue-950 z-300'>
+      <div className='tech fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_75%_25%] from-blue-500 via-blue-700 to-blue-950 z-300'>
         <Typography variant='h4' component="h4" margin={5}>
           Technology and Languages
         </Typography>
@@ -131,7 +130,7 @@ export default function AboutMePage() {
           <LanguageComponent languages={technologies} header='Tools and Technologies' />
         </div>
       </div>
-      <div id='contact' className='contact block my-auto h-screen min-w-screen fixed top-0 left-0 pl-70 bg-radial-[at_50%_50%] from-indigo-500 via-indigo-700 to-indigo-950  z-200'>
+      <div className='contact block my-auto h-screen min-w-screen fixed top-0 left-0 pl-70 bg-radial-[at_50%_50%] from-indigo-500 via-indigo-700 to-indigo-950  z-200'>
         <Typography variant="h4" margin={5}>Contact Me</Typography>
         <Container
           sx={{ backgroundColor: theme.palette.background.paper, width: 900 }}
@@ -140,7 +139,7 @@ export default function AboutMePage() {
           <ContactForm />
         </Container>
       </div>
-      <div id='projects' className='projects fixed top-0 left-0 pl-70'>
+      <div className='projects fixed top-0 left-0 pl-70'>
         <Typography variant='h4' component='h4' margin={5}>Projects</Typography>
         <Artifact stack='Vue Express TypeORM SQLite3' title='Scheduling Application' image='/scheduler.png'>
           A barebones employee scheduling app that has many tables in a
