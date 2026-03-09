@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/navbar";
 import React from "react";
 import { Providers } from './components/provider';
+import NavBarComponent from "./components/navbar";
 
 
 const geistSans = Geist({
@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "John Lazaro",
+  title: "John's Portfolio",
   description: "Portfolio about John Lazaro",
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NavBar />
+        <NavBarComponent />
         <Providers>{children}</Providers>
       </body>
     </html>

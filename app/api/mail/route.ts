@@ -55,7 +55,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         return NextResponse.json({ message: 'email has been successfully sent' }, { status: 200 })
     } catch (error) {
         console.error(error)
-        return NextResponse.json({ message: 'There was an error when attempting to send the message' }, { status: 501 })
+        return NextResponse.json({ message: 'There was an error when attempting to send the message' }, { status: 422 })
     }
 }
 

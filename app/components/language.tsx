@@ -1,6 +1,6 @@
-import {Divider, Typography} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import * as React from "react";
-import {styled} from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 /**
@@ -22,27 +22,31 @@ const NestedItem = styled(Paper)(({ theme }) => {
     bgcolor: theme.palette.background.paper,
     color: theme.palette.text.primary,
     p: 2,
-    borderRadius: 2,
+    borderRadius: 10,
     boxShadow: isDarkMode ? "0px 4px 10px rgba(255,255,255,0.2)" : "0px 4px 10px rgba(0,0,0,0.2)",
   })
 })
 
+interface props {
+  languages: Array<string>,
+  header: string
+}
+
 /**
  * This component will store the programming languages and technologies that I have
  * learned throughout my life
- * @param param0 
+ * @param param
  * @returns 
  */
-export default function LanguageComponent({language, children}: {language?: string, children?:React.ReactNode}) {
+export default function LanguageComponent({ languages, header }: props) {
   return (
-    <NestedItem>
-      <Typography variant='subtitle1' component='span'>
-        {language}
-      </Typography>
-      <Divider />
-      <Typography variant='caption' component='p'>
-        {children}
-      </Typography>
+    <NestedItem className='h-90 align-top'>
+      <Typography variant='h6' className='col-start-1 col-end-3 align-top'>{header}</Typography>
+      <Container className='flex flex-wrap item-start gap-3 justify-evenly'>
+        {languages.map((tech) =>
+          <Typography className='bg-blue-400 border border-blue-700 rounded-xl h-min px-2 py-1' key={tech}>{tech}</Typography>
+        )}
+      </Container>
     </NestedItem>
   )
 }

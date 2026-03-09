@@ -18,7 +18,7 @@ export default function ContactForm() {
    * This function is the change handler in the form
    * @param e 
    */
-  function handleChange (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
@@ -52,10 +52,10 @@ export default function ContactForm() {
     }
   }
 
-  return(
+  return (
     <Box component='form' onSubmit={handleSubmission}>
-      {status === 'error' && 
-      'An error has occured while attempting to send the email. Please try again'}
+      {status === 'error' &&
+        'An error has occured while attempting to send the email. Please try again'}
       <TextField
         margin='dense'
         fullWidth
@@ -92,6 +92,10 @@ export default function ContactForm() {
       <Button
         type='submit'
         disabled={status == 'sending'}
+        variant='contained'
+        sx={{
+          marginTop: 1
+        }}
       >
         Submit
       </Button>
