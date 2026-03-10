@@ -47,7 +47,7 @@ export default function ScrollSpyTabs() {
         <div id='experience' className="section" style={{ height: '175vh' }}></div>
         <div id='tech' className="section" style={{ height: '170vh' }}></div>
         <div id='contact' className="section" style={{ height: '160vh' }}></div>
-        <div id='projects' className="section" style={{ height: '100vh' }}></div>
+        <div id='projects' className="section" style={{ height: '160vh' }}></div>
       </Box>
     </Box>
   );

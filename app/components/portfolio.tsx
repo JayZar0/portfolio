@@ -97,7 +97,7 @@ export default function PortfolioContentComponent() {
   })
 
   return (
-    <div className='fade-in min-h-210 max-w-screen sm:p-20 font-(family-name:--font-geist-sans) overflow-x-clip'>
+    <div className='fade-in max-w-screen sm:p-20 font-(family-name:--font-geist-sans) overflow-x-clip'>
       <span className='scrollbar fixed bg-purple-500 min-w-screen h-1 -left-350 top-0 z-5000'></span>
       <div className='about fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_25%_25%] from-gray-500 via-gray-700 to-gray-950  bg-gray-700 p-10 z-500'>
         <Item>
