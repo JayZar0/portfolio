@@ -51,7 +51,7 @@ export default function IntroAnimation({ onComplete }: props) {
     >
       <Typography variant='h2'>Hello, My Name Is</Typography>
       <Typography variant='h2'>John Lazaro</Typography>
-      <Typography variant='h6'>And this is my portfolio</Typography>
+      <Typography variant='h6'>And welcome to my portfolio</Typography>
     </div>
   )
 }

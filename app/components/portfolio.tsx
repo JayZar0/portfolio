@@ -36,8 +36,9 @@ export default function PortfolioContentComponent() {
   useGSAP(() => {
     gsap.to('.about', {
       scrollTrigger: {
-        start: 0,
-        end: 1000,
+        trigger: '#about',
+        start: 'top top',
+        end: '+=100%',
         scrub: true
       },
       yPercent: -100,
@@ -45,8 +46,9 @@ export default function PortfolioContentComponent() {
 
     gsap.to('.experience', {
       scrollTrigger: {
-        start: 1000,
-        end: 2000,
+        trigger: '#experience',
+        start: 'top top',
+        end: '+=100%',
         scrub: true
       },
       xPercent: 100,
@@ -54,8 +56,9 @@ export default function PortfolioContentComponent() {
 
     gsap.to('.tech', {
       scrollTrigger: {
-        start: 2000,
-        end: 3000,
+        trigger: '#tech',
+        start: 'top top',
+        end: '+=100%',
         scrub: true
       },
       xPercent: -100
@@ -63,8 +66,9 @@ export default function PortfolioContentComponent() {
 
     gsap.to('.contact', {
       scrollTrigger: {
-        start: 3000,
-        end: 4000,
+        trigger: '#contact',
+        start: 'top top',
+        end: '+=100%',
         scrub: true
       },
       xPercent: -100,
@@ -73,17 +77,20 @@ export default function PortfolioContentComponent() {
 
     gsap.to('.projects', {
       scrollTrigger: {
-        start: 4000,
-        end: 4600,
+        trigger: '#projects',
+        start: 'top top',
+        end: '+=100%',
         scrub: true
       },
-      y: -600
+      yPercent: -100
     })
 
     gsap.to('.scrollbar', {
       scrollTrigger: {
-        start: 0,
-        end: 4600,
+        trigger: '#about',
+        endTrigger: '#projects',
+        start: 'top top',
+        end: 'bottom bottom',
         scrub: true,
       },
       x: 1400
