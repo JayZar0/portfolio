@@ -40,41 +40,41 @@ export default function PortfolioContentComponent() {
         end: 1000,
         scrub: true
       },
-      y: -1500,
+      yPercent: -100,
     })
 
     gsap.to('.experience', {
       scrollTrigger: {
-        start: 400,
-        end: 1400,
+        start: 1000,
+        end: 2000,
         scrub: true
       },
-      x: 1500,
+      xPercent: 100,
     })
 
     gsap.to('.tech', {
       scrollTrigger: {
-        start: 1100,
-        end: 2100,
+        start: 2000,
+        end: 3000,
         scrub: true
       },
-      x: -1500
+      xPercent: -100
     })
 
     gsap.to('.contact', {
       scrollTrigger: {
-        start: 1900,
-        end: 2700,
+        start: 3000,
+        end: 4000,
         scrub: true
       },
-      x: -1500,
-      y: -1500
+      xPercent: -100,
+      yPercent: -100
     })
 
     gsap.to('.projects', {
       scrollTrigger: {
-        start: 2300,
-        end: 2900,
+        start: 4000,
+        end: 4600,
         scrub: true
       },
       y: -600
@@ -83,7 +83,7 @@ export default function PortfolioContentComponent() {
     gsap.to('.scrollbar', {
       scrollTrigger: {
         start: 0,
-        end: 2900,
+        end: 4600,
         scrub: true,
       },
       x: 1400
@@ -97,7 +97,7 @@ export default function PortfolioContentComponent() {
   })
 
   return (
-    <div className='fade-in min-h-310 max-w-screen sm:p-20 font-(family-name:--font-geist-sans) overflow-x-clip'>
+    <div className='fade-in min-h-210 max-w-screen sm:p-20 font-(family-name:--font-geist-sans) overflow-x-clip'>
       <span className='scrollbar fixed bg-purple-500 min-w-screen h-1 -left-350 top-0 z-5000'></span>
       <div className='about fixed top-0 left-0 pl-70 h-screen min-w-screen bg-radial-[at_25%_25%] from-gray-500 via-gray-700 to-gray-950  bg-gray-700 p-10 z-500'>
         <Item>

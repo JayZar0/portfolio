@@ -43,11 +43,11 @@ export default function ScrollSpyTabs() {
       </Tabs>
 
       <Box sx={{ ml: '150px' }}>
-        <div id='about' className="section" style={{ height: '60vh' }}></div>
-        <div id='experience' className="section" style={{ height: '120vh' }}></div>
-        <div id='tech' className="section" style={{ height: '120vh' }}></div>
-        <div id='contact' className="section" style={{ height: '80vh' }}></div>
-        <div id='projects' className="section" style={{ height: '1vh' }}></div>
+        <div id='about' className="section" style={{ height: '160vh' }}></div>
+        <div id='experience' className="section" style={{ height: '175vh' }}></div>
+        <div id='tech' className="section" style={{ height: '170vh' }}></div>
+        <div id='contact' className="section" style={{ height: '160vh' }}></div>
+        <div id='projects' className="section" style={{ height: '100vh' }}></div>
       </Box>
     </Box>
   );
