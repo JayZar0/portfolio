@@ -1,5 +1,4 @@
-// components/IntroAnimation.jsx
-'use client' // Required for client-side interactivity in the App Router
+'use client'
 
 import { useRef, useState } from 'react'
 import { gsap } from 'gsap'

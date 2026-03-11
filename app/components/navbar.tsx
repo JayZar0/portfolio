@@ -1,19 +1,23 @@
-'use client';
-import { useRef, useState } from 'react';
-import { Tabs, Tab, Box } from '@mui/material';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+'use client'
+import { useRef, useState } from 'react'
+import { Tabs, Tab, Box, useMediaQuery, useTheme } from '@mui/material'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default function ScrollSpyTabs() {
-  const [activeTab, setActiveTab] = useState(0);
-  const containerRef = useRef('');
+  const [activeTab, setActiveTab] = useState(0)
+  const containerRef = useRef('')
+  const theme = useTheme()
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+
+  const tabOrientation = isDesktop ? 'vertical' : 'horizontal'
 
   useGSAP(() => {
     // Select sections
-    const sections = gsap.utils.toArray('.section');
+    const sections = gsap.utils.toArray('.section')
 
     sections.forEach((section, i) => {
       ScrollTrigger.create({
@@ -22,18 +26,19 @@ export default function ScrollSpyTabs() {
         end: 'bottom 50%',
         onEnter: () => setActiveTab(i),
         onEnterBack: () => setActiveTab(i),
-      });
-    });
-  }, { scope: containerRef });
+      })
+    })
+  }, { scope: containerRef })
 
   return (
     <Box ref={containerRef} sx={{ display: 'flex' }}>
       <Tabs
-        orientation="vertical"
+        orientation={tabOrientation}
         value={activeTab}
         onChange={(e, newValue) => setActiveTab(newValue)}
         sx={{ borderRight: 1, borderColor: 'divider', position: 'fixed', zIndex: 3000 }}
         className='bg-[#8374748b] h-screen'
+        variant='scrollable'
       >
         <Tab label="John Lazaro" href='#about' />
         <Tab label="Experience" href='#experience' />
@@ -43,12 +48,12 @@ export default function ScrollSpyTabs() {
       </Tabs>
 
       <Box sx={{ ml: '150px' }}>
-        <div id='about' className="section" style={{ height: '100vh' }}></div>
-        <div id='experience' className="section" style={{ height: '100vh' }}></div>
-        <div id='tech' className="section" style={{ height: '100vh' }}></div>
-        <div id='contact' className="section" style={{ height: '100vh' }}></div>
+        <div id='about' className="section" style={{ height: '150vh' }}></div>
+        <div id='experience' className="section" style={{ height: '150vh' }}></div>
+        <div id='tech' className="section" style={{ height: '150vh' }}></div>
+        <div id='contact' className="section" style={{ height: '150vh' }}></div>
         <div id='projects' className="section" style={{ height: '100vh' }}></div>
       </Box>
     </Box>
-  );
+  )
 }
